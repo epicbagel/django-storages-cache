@@ -1,0 +1,6 @@
+*.pyc
+build*
+dist/*
+bagelcompress.egg-info/*
+
+bagelcompress.egg-info/dependency_links.txt
