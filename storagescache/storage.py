@@ -1,6 +1,7 @@
 from django.conf import settings
 from storages.backends.s3boto import S3BotoStorage
 from storages.backends.mosso import CloudFilesStorage
+from cumulus.storage import CloudFilesStaticStorage
 from django.contrib.staticfiles.storage import CachedFilesMixin
 
 class MyCachedFilesMixin(CachedFilesMixin):
