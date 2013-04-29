@@ -21,6 +21,6 @@ class CachedStaticS3BotoStorage(MyCachedFilesMixin, S3BotoStorage):
 		super(CachedStaticS3BotoStorage, self).__init__(*args, **kwargs)
 
 
-class CachedStaticCloudFilesStorage(MyCachedFilesMixin, CloudFilesStorage):
+class CachedStaticCloudFilesStorage(MyCachedFilesMixin, CloudFilesStaticStorage):
 	def __init__(self, *args, **kwargs):
 		super(CachedStaticCloudFilesStorage, self).__init__(*args, **kwargs)
