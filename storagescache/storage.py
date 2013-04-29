@@ -1,5 +1,6 @@
 from django.conf import settings
 from storages.backends.s3boto import S3BotoStorage
+from storages.backends.mosso import CloudFilesStorage
 from django.contrib.staticfiles.storage import CachedFilesMixin
 
 class MyCachedFilesMixin(CachedFilesMixin):
@@ -17,3 +18,8 @@ class CachedStaticS3BotoStorage(MyCachedFilesMixin, S3BotoStorage):
 	def __init__(self, *args, **kwargs):
 		kwargs.update(getattr(settings, "STATICFILES_S3_OPTIONS", {}))
 		super(CachedStaticS3BotoStorage, self).__init__(*args, **kwargs)
+
+
+class CachedStaticCloudFilesStorage(MyCachedFilesMixin, CloudFilesStorage):
+	def __init__(self, *args, **kwargs):
+		super(CachedStaticCloudFilesStorage, self).__init__(*args, **kwargs)
